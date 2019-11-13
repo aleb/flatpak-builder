@@ -2089,6 +2089,7 @@ builder_manifest_build (BuilderManifest *self,
             return FALSE;
           if (!builder_context_disable_rofiles (context, error))
             return FALSE;
+          g_print ("CALLING builder_cache_commit from builder_manifest 1\n");
           if (!builder_cache_commit (cache, body, error))
             return FALSE;
         }
@@ -2765,6 +2766,7 @@ builder_manifest_cleanup (BuilderManifest *self,
       if (!builder_context_disable_rofiles (context, error))
         return FALSE;
 
+      g_print ("CALLING builder_cache_commit from builder_manifest 2\n");
       if (!builder_cache_commit (cache, "Cleanup", error))
         return FALSE;
     }
@@ -3179,6 +3181,7 @@ builder_manifest_finish (BuilderManifest *self,
       if (!builder_context_disable_rofiles (context, error))
         return FALSE;
 
+      g_print ("CALLING builder_cache_commit from builder_manifest 3\n");
       if (!builder_cache_commit (cache, "Finish", error))
         return FALSE;
     }
@@ -3316,6 +3319,7 @@ builder_manifest_create_platform_base (BuilderManifest *self,
       if (!builder_context_disable_rofiles (context, error))
         return FALSE;
 
+      g_print ("CALLING builder_cache_commit from builder_manifest 4\n");
       if (!builder_cache_commit (cache, "Created platform base", error))
         return FALSE;
     }
@@ -3477,6 +3481,7 @@ builder_manifest_prepare_platform (BuilderManifest *self,
       if (!builder_context_disable_rofiles (context, error))
         return FALSE;
 
+      g_print ("CALLING builder_cache_commit from builder_manifest 5\n");
       if (!builder_cache_commit (cache, "Prepared platform", error))
         return FALSE;
     }
@@ -3612,6 +3617,7 @@ builder_manifest_finish_platform (BuilderManifest *self,
       if (!builder_context_disable_rofiles (context, error))
         return FALSE;
 
+      g_print ("CALLING builder_cache_commit from builder_manifest 6\n");
       if (!builder_cache_commit (cache, "Platform finish", error))
         return FALSE;
     }
@@ -3736,6 +3742,7 @@ builder_manifest_bundle_sources (BuilderManifest *self,
       if (!builder_context_disable_rofiles (context, error))
         return FALSE;
 
+      g_print ("CALLING builder_cache_commit from builder_manifest 7\n");
       if (!builder_cache_commit (cache, "Bundled sources", error))
         return FALSE;
     }

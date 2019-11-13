@@ -880,6 +880,7 @@ main (int    argc,
               return 1;
             }
 
+          g_print ("CALLING builder_cache_commit from main\n");
           if (!builder_cache_commit (cache, body, &error))
             {
               g_printerr ("Error: %s\n", error->message);
